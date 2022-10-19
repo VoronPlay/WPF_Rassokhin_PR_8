@@ -27,22 +27,19 @@ namespace WPF_Rassokhin_PR_8
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            double x0 = Convert.ToDouble(X0.Text);
-            double xk = Convert.ToDouble(Xk.Text);
-            double dx = Convert.ToDouble(Dx.Text);
-            double a = Convert.ToDouble(A.Text);
+            double x = double.Parse(X.Text);
+            double b = double.Parse(B.Text);
 
-            double x = x0;
 
-            while (x <=(xk + dx / 2))
-            {
-                double y = a * Math.Log(x);
 
-                X.Text += "x=" + Convert.ToString(x) + Environment.NewLine;
-                Y.Text += "y=" + Convert.ToString(y) + Environment.NewLine;
+            double y = ((Math.Pow(x, 5 / 2) - b) * Math.Log(Math.Pow(x, 2) + 12, 7));
 
-                x = x + dx;
-            }
+
+            Y.Text += Environment.NewLine + "Результат " + y.ToString();
+
+
         }
     }
 }
+
+
